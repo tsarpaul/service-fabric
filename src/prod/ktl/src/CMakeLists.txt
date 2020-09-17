@@ -213,6 +213,7 @@ if (BUILD_THIRD_PARTY)
 else()
     set (CXX_LIB_PATH "${THIRD_PARTY_LIB_DIR}/Cxx")
 endif()
+message(STATUS "Cxx Lib Path: ${CXX_LIB_PATH}")
 include_directories ("${CXX_INC_PATH}")
 link_directories("${CXX_LIB_PATH}")
 

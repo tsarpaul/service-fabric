@@ -12,13 +12,15 @@ set( LINUX_SOURCES2
   ../TraceBinaryWrapper.Linux.c
 )
 
-add_precompiled_header(${lib_FabricCommon} ../stdafx.h)
+#add_precompiled_header(${lib_FabricCommon} ../stdafx.h)
 
 include_directories("../pch")
 
 add_library(objects_fabriccommon OBJECT ${LINUX_SOURCES})
 add_library(objects_fabriccommon2 OBJECT ${LINUX_SOURCES2})
 add_library(${lib_FabricCommon} SHARED $<TARGET_OBJECTS:objects_fabriccommon> $<TARGET_OBJECTS:objects_fabriccommon2>)
+
+add_precompiled_header(${lib_FabricCommon} ../stdafx.h)
 
 set_target_properties(${lib_FabricCommon} PROPERTIES 
     LIBRARY_OUTPUT_DIRECTORY ${LIBRARY_OUTPUT_DIR})

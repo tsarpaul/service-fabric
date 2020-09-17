@@ -39,6 +39,8 @@
 #include "winrt/ntassert.h"
 #include <wchar.h>
 #include <new>
+#include <sys/uio.h>
+#include <signal.h>
 
 template <typename T, size_t N> char(*RtlpNumberOf(UNALIGNED T(&)[N]))[N];
 
